@@ -1,0 +1,160 @@
+const webpack = require('webpack');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const PurifyCSSPlugin = require('purifycss-webpack-plugin');
+const CleanWebpackPlugin = require('clean-webpack-plugin');
+
+exports.clean = function(path) {
+    return {
+        plugins: [
+            new CleanWebpackPlugin([path])
+        ]
+    };
+};
+
+exports.devServer = function(options) {
+    return {
+        devServer: {
+            historyApiFallback: true,
+            hot: true,
+            hotOnly: true,
+            stats: 'errors-only',
+            host: process.env.HOST,
+            port: process.env.PORT
+        },
+        plugins: [
+            new webpack.HotModuleReplacementPlugin({
+                //multiStep: true
+            })
+        ]
+    }
+};
+
+exports.lintJavaScript = function({ paths, options }) {
+    return {
+        module: {
+            rules: [
+                {
+                    test: /\.js$/,
+                    enforce: 'pre',
+                    loader: 'eslint-loader',
+                    options: options
+                }
+            ]
+        }
+    }
+};
+
+exports.loadJavascript = function(paths) {
+    return {
+        module: {
+            rules: [
+                {
+                    test: /\.js$/,
+                    include: paths,
+                    loader: 'babel-loader',
+                    options: {
+                        //enable caching for performance during dev
+                        cacheDirectory: true
+                    }
+                }
+            ]
+        }
+    };
+};
+
+exports.lintCSS = function(paths) {
+    return {
+        module: {
+            rules: [
+                {
+                    test: /\.css$/,
+                    include: paths,
+                    enforce: 'pre',
+                    loader: 'postcss-loader',
+                    options: {
+                        ident: 'postcss',
+                        plugins: function() {
+                            return [
+                                require('stylelint')({
+                                    ignoreFiles: 'node_modules/**/*.css'
+                                })
+                            ]
+                        }
+                    }
+                }
+            ]
+        }
+    };
+};
+
+exports.loadCSS = function(paths) {
+    return {
+        devtool: 'source-map',
+        module: {
+            rules: [
+                {
+                    test: /\.scss$/,
+                    include: paths,
+                    use: ['style-loader', 'css-loader', 'sass-loader']
+                }
+            ]
+        }
+    }
+};
+
+exports.extractCSS = function(paths) {
+    return {
+        module: {
+            rules: [
+                {
+                    test: /\.css$/,
+                    include: paths,
+                    loader: ExtractTextPlugin({
+                        fallback: 'style-loader',
+                        use: 'css-loader'
+                    })
+                }
+            ]
+        },
+        plugins: [
+            new ExtractTextPlugin('bundle.css')
+        ]
+    }
+};
+
+exports.purifyCSS = function(paths) {
+    return {
+        plugins: [
+            new PurifyCSSPlugin({ paths: paths })
+        ]
+    }
+};
+
+exports.generateSourcemaps = function(type) {
+    return {
+        devtool: type
+    };
+};
+
+exports.extractBundles = function(bundles, options) {
+    const entry = {};
+    const names = [];
+
+    //set up entries and names
+    bundles.forEach(({ name, entries }) => {
+        if (entries) {
+            entry[name] = entries;
+        }
+        names.push(name);
+    });
+
+    return {
+        //define an entry point needed for splitting
+        entry,
+        plugins: [
+            new webpack.optimize.CommonChunkPlugin(
+                Object.assign({}, options, {names})
+            )
+        ]
+    };
+};

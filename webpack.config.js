@@ -40,12 +40,12 @@ module.exports = function(env) {
             //if you want to have code splitting (from vendor files)
             //Add a new entry point here - React is used as an example
             //
-            // parts.extractBundles([
-            //     {
-            //         name: 'vendor',
-            //         entries: ['react']
-            //     }
-            // ]),
+            parts.extractBundles([
+                {
+                    name: 'vendor',
+                    entries: ['react']
+                }
+            ]),
             parts.generateSourcemaps('source-map'),
             parts.lintJavaScript({ paths: PATHS.app }),
             parts.extractCSS(),
@@ -68,12 +68,13 @@ module.exports = function(env) {
             host: process.env.HOST,
             port: process.env.PORT
         }),
-        // parts.lintJavaScript({
-        //     paths: PATHS.app,
-        //     options: {
-        //         emitWarning: true
-        //     }
-        // }),
+        parts.loadJavascript(PATHS.app),
+        parts.lintJavaScript({
+            paths: PATHS.app,
+            options: {
+                emitWarning: true
+            }
+        }),
         parts.lintCSS(PATHS.app)
     ]);
 };

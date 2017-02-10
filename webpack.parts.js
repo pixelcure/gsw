@@ -51,7 +51,7 @@ exports.loadJavascript = function(paths) {
                 {
                     test: /\.(js|jsx)$/,
                     include: paths,
-                    use: 'babel-loader',
+                    loader: 'babel-loader',
                     query: {
                         //enable caching for performance during dev
                         cacheDirectory: true,

@@ -24,7 +24,7 @@ const common = merge([
         },
         plugins: [
             new HtmlWebpackPlugin({
-                title: 'Your site'
+                template: 'index.html'
             }),
         ]
     }
@@ -68,12 +68,12 @@ module.exports = function(env) {
             host: process.env.HOST,
             port: process.env.PORT
         }),
-        parts.lintJavaScript({
-            paths: PATHS.app,
-            options: {
-                emitWarning: true
-            }
-        }),
+        // parts.lintJavaScript({
+        //     paths: PATHS.app,
+        //     options: {
+        //         emitWarning: true
+        //     }
+        // }),
         parts.lintCSS(PATHS.app)
     ]);
 };

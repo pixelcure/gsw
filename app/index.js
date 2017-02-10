@@ -1,4 +1,13 @@
 import './main.scss';
-import component from './component';
+import React, { PropTypes } from 'react';
+import ReactDOM from 'react-dom';
 
-document.body.appendChild(component());
+class App extends React.Component {
+    render() {
+        return (
+            <h1>Hello World</h1>
+        );
+    }
+}
+
+ReactDOM.render(<App/>, document.getElementById('main'));

@@ -49,12 +49,13 @@ exports.loadJavascript = function(paths) {
         module: {
             rules: [
                 {
-                    test: /\.js$/,
+                    test: /\.(js|jsx)$/,
                     include: paths,
-                    loader: 'babel-loader',
-                    options: {
+                    use: 'babel-loader',
+                    query: {
                         //enable caching for performance during dev
-                        cacheDirectory: true
+                        cacheDirectory: true,
+                        presets: ['react', 'es2015']
                     }
                 }
             ]
@@ -109,7 +110,7 @@ exports.extractCSS = function(paths) {
                 {
                     test: /\.css$/,
                     include: paths,
-                    loader: ExtractTextPlugin({
+                    loader: ExtractTextPlugin.extract({
                         fallback: 'style-loader',
                         use: 'css-loader'
                     })

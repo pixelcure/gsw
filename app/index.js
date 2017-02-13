@@ -2,8 +2,7 @@ import './main.scss';
 import React, { PropTypes } from 'react';
 import ReactDOM from 'react-dom';
 
-//import players
-import StephCurry from './players/StephCurry/StephCurry';
+import Player from './components/players/Player.js';
 
 class App extends React.Component {
     render() {
@@ -17,7 +16,9 @@ class App extends React.Component {
                     <li>Game info</li>
                     <li>Schedule</li>
                 </ul>
-                <StephCurry/>
+                <Player
+                    name='Stephen Curry'
+                    image='http://placehold.it/300'/>
             </div>
         );
     }

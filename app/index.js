@@ -2,13 +2,14 @@ import './main.scss';
 import React, { PropTypes } from 'react';
 import ReactDOM from 'react-dom';
 
-import Player from './components/players/Player.js';
+import Hero from './components/parts/Hero/Hero.js';
+import Player from './components/parts/Player/Player.js';
 
 class App extends React.Component {
     render() {
         return (
             <div>
-                <h1>Welcome to the Golden State Warriors home page!</h1>
+                <Hero title='Welcome to the Golden State Warriors home page!'/>
                 <h2>We need:</h2>
                 <ul>
                     <li>Player info</li>

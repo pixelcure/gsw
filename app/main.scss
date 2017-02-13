@@ -4,3 +4,9 @@
 html {
   background: cornsilk;
 }
+
+.hero {
+  &.is-primary {
+    background-color: $gs-blue;
+  }
+}

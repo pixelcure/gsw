@@ -1,26 +1,15 @@
 import React, { PropTypes } from 'react';
 import ReactDOM from 'react-dom';
 
-import NBA from 'nba';
-
 import './main.scss';
 
 import Hero from './components/parts/Hero/Hero.js';
+import Schedule from './components/parts/Schedule/Schedule';
 import Player from './components/parts/Player/Player.js';
 
 class App extends React.Component {
     constructor() {
         super();
-
-        console.log(NBA);
-        const curry = NBA.findPlayer('Stephen Curry');
-        console.log(curry);
-        let curryShoot = NBA.stats.playerStats(curry.playerId);
-
-        curryShoot.then(function(stats) {
-            console.log(stats);
-        });
-
     }
     render() {
         return (
@@ -35,7 +24,7 @@ class App extends React.Component {
                 </ul>
                 <Player
                     name='Stephen Curry'
-                    image='http://placehold.it/300'/>
+                    image='http://placehold.it/200'/>
             </div>
         );
     }

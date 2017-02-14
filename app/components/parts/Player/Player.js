@@ -9,19 +9,25 @@ export default class Player extends React.Component {
     }
 
     switchTab(e, key) {
-        switch (key) {
-            case 0:
-                this.setState({activeTab: 0});
-                break;
-            case 1:
-                this.setState({activeTab: 1});
-                break;
-            case 2:
-                this.setState({activeTab: 2});
-                break;
-            default:
-                break;
+        e.preventDefault();
+        this.setState({activeTab: key});
+    }
+
+    showContent() {
+        if(this.state.activeTab === 0) {
+            return (
+                <div className='data-table'>content here</div>
+            );
+        } else if (this.state.activeTab === 1) {
+            return (
+                <div className='data-table'>more</div>
+            );
+        } else {
+            return (
+                <div className='data-table'>last</div>
+            );
         }
+
     }
 
     render() {
@@ -37,11 +43,12 @@ export default class Player extends React.Component {
                     <div className='media-content'>
                         <div className='tabs'>
                             <ul>
-                                <li className={(this.state.activeTab === 0) ? 'is-active': null}><a onClick={(e) => this.switchTab(e, 0)} href='#'>Season Stats</a></li>
-                                <li className={(this.state.activeTab === 1) ? 'is-active': null}><a href='#' onClick={(e) => this.switchTab(e, 1)}>Career Stats</a></li>
-                                <li className={(this.state.activeTab === 2) ? 'is-active': null}><a href='#' onClick={(e) => this.switchTab(e, 2)}>Highlights</a></li>
+                                <li className={(this.state.activeTab === 0) ? 'is-active': null}><a onClick={(e) => this.switchTab(e, 0)} href='#'>Previous Game</a></li>
+                                <li className={(this.state.activeTab === 1) ? 'is-active': null}><a href='#' onClick={(e) => this.switchTab(e, 1)}>Season</a></li>
+                                <li className={(this.state.activeTab === 2) ? 'is-active': null}><a href='#' onClick={(e) => this.switchTab(e, 2)}>Career</a></li>
                             </ul>
                         </div>
+                        {this.showContent()}
                     </div>
                 </article>
             </div>

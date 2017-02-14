@@ -10,3 +10,14 @@ html {
     background-color: $gs-blue;
   }
 }
+
+.tabs {
+  li.is-active a {
+    border-bottom-color: $gs-blue;
+    color: $gs-blue;
+  }
+  a:hover {
+    border-bottom-color: $gs-yellow;
+    color: $gs-yellow;
+  }
+}

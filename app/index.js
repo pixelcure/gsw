@@ -19,7 +19,8 @@ class App extends React.Component {
             return (
                 <Player
                     name={player.name}
-                    image={player.image}/>
+                    image={player.image}
+                    key={index}/>
             );
         });
     }

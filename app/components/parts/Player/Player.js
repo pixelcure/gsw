@@ -27,7 +27,6 @@ export default class Player extends React.Component {
     }
 
     maybeShowContent() {
-        console.log(this);
         if(this.state.playerData !== null) {
             if(this.state.activeTab === 0) {
                 return (
@@ -55,7 +54,7 @@ export default class Player extends React.Component {
                 <article className='media'>
                     <div className='media-left'>
                         <figure>
-                            <img src={this.props.image}/>
+                            <img className='image is-128x128' src={this.props.image}/>
                             <figcaption>{this.props.name}</figcaption>
                         </figure>
                     </div>

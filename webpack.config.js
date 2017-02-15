@@ -51,7 +51,8 @@ module.exports = function(env) {
             parts.extractCSS(),
             parts.purifyCSS(
                 glob.sync(path.join(PATHS.app, '*'))
-            )
+            ),
+            parts.compressImages(PATHS.app)
         ]);
     }
 
@@ -63,6 +64,7 @@ module.exports = function(env) {
             ]
         },
         parts.generateSourcemaps('eval-source-map'),
+        parts.compressImages(PATHS.app),
         parts.loadCSS(),
         parts.devServer({
             host: process.env.HOST,

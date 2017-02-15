@@ -137,6 +137,32 @@ exports.generateSourcemaps = function(type) {
     };
 };
 
+exports.compressImages = function(paths) {
+    return {
+        module: {
+            rules: [
+                {
+                    test: /\.png$/,
+                    include: paths,
+                    use: [
+                        {
+                        loader: 'image-webpack-loader',
+                        options: {
+                            optimizationLevel: 7,
+                            bypassOnDebug: true,
+                            interlaced: false
+                            }
+                        },
+                        {
+                            loader: 'file-loader'
+                        }
+                    ]
+                }
+            ]
+        }
+    };
+};
+
 exports.extractBundles = function(bundles, options) {
     const entry = {};
     const names = [];

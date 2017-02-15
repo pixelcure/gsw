@@ -1,19 +1,27 @@
 @import "~bulma";
 @import "./_vars.scss";
 
-.hero {
-  &.is-primary {
-    background-color: $gs-blue;
-  }
-}
+html {
 
-.tabs {
-  li.is-active a {
-    border-bottom-color: $gs-blue;
-    color: $gs-blue;
+  body {
+    background-image: url("images/main_bg.png");
+    padding-bottom: 20px;
   }
-  a:hover {
-    border-bottom-color: $gs-yellow;
-    color: $gs-yellow;
+
+  .hero {
+    &.is-primary {
+      background-color: $gs-blue;
+    }
+  }
+
+  .tabs {
+    li.is-active a {
+      border-bottom-color: $gs-blue;
+      color: $gs-blue;
+    }
+    a:hover {
+      border-bottom-color: $gs-yellow;
+      color: $gs-yellow;
+    }
   }
 }

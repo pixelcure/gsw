@@ -29,13 +29,10 @@ class App extends React.Component {
         return (
             <div>
                 <Hero title='Welcome to the Golden State Warriors home page!'/>
-                <h2>We need:</h2>
-                <ul>
-                    <li>Player info</li>
-                    <li>player stats</li>
+                {/* <ul>
                     <li>Game info</li>
                     <li>Schedule</li>
-                </ul>
+                </ul> */}
                 <div className='container is-fluid'>
                     {this.showPlayers()}
                 </div>

@@ -16,8 +16,8 @@ export default class Player extends React.Component {
     componentDidMount() {
         getPlayerStats(this.props.name)
             .then((data) => {
-                this.setState({playerData: data})
-                console.log(this.props.name, data);
+                this.setState({playerData: data});
+                // console.log(this.props.name, data);
             });
     }
 

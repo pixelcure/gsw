@@ -36,7 +36,9 @@ class App extends React.Component {
                     <li>Game info</li>
                     <li>Schedule</li>
                 </ul>
-                {this.showPlayers()}
+                <div className='container is-fluid'>
+                    {this.showPlayers()}
+                </div>
             </div>
         );
     }

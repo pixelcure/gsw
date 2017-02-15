@@ -1,10 +1,6 @@
 @import "~bulma";
 @import "./_vars.scss";
 
-html {
-  background: cornsilk;
-}
-
 .hero {
   &.is-primary {
     background-color: $gs-blue;

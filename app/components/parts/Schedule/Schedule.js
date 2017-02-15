@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { getWarriorsTeamInfo } from '../../Data';
+import { getWarriorsTeamInfo, getTeamInfo } from '../../Data';
 
 export default class Schedule extends React.Component {
     constructor() {
@@ -10,6 +10,9 @@ export default class Schedule extends React.Component {
     componentWillMount() {
         getWarriorsTeamInfo()
             .then((data) => console.log(data));
+
+        getTeamInfo()
+            .then((data) => console.log('team info', data));
     }
 
     createGame() {

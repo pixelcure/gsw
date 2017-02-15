@@ -5,9 +5,10 @@ import './main.scss';
 
 import PlayerNames from './components/parts/Team.json';
 
-import Hero from './components/parts/Hero/Hero.js';
+import Hero from './components/parts/Hero/Hero';
+import Team from './components/parts/Team/Team';
 import Schedule from './components/parts/Schedule/Schedule';
-import Player from './components/parts/Player/Player.js';
+import Player from './components/parts/Player/Player';
 
 class App extends React.Component {
     constructor() {
@@ -34,6 +35,8 @@ class App extends React.Component {
                     <li>Schedule</li>
                 </ul> */}
                 <div className='container is-fluid'>
+                    <Team/>
+                    {/* <Schedule/> */}
                     {this.showPlayers()}
                 </div>
             </div>

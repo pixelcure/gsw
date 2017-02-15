@@ -27,19 +27,23 @@ export default class Player extends React.Component {
     }
 
     maybeShowContent() {
+        console.log(this);
         if(this.state.playerData !== null) {
             if(this.state.activeTab === 0) {
                 return (
                     <div className='data-table'>more</div>
                 );
             } else if (this.state.activeTab === 1) {
+                let seasonTotal = this.state.playerData.seasonTotalsRegularSeason;
                 return (
                     <Table
-                        data={this.state.playerData.careerTotalsRegularSeason[0]}/>
+                        data={seasonTotal[seasonTotal.length - 1]}/>
                 );
             } else {
+                let careerTotal = this.state.playerData.careerTotalsRegularSeason;
                 return (
-                    <div className='data-table'>last</div>
+                    <Table
+                        data={careerTotal[0]}/>
                 );
             }
         }

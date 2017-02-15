@@ -1,8 +1,8 @@
 import NBA from 'nba';
 
 export function getPlayerStats(name) {
-    let player = NBA.findPlayer(name);
 
+    let player = NBA.findPlayer(name);
     return NBA.stats.playerProfile({PlayerID: player.playerId})
         .then(function(stats) {
             return stats;

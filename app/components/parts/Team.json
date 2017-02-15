@@ -1,46 +1,50 @@
 [
   {
     "name": "Stephen Curry",
-    "image": "http://placehold.it/128"
+    "image": "https://ak-static.cms.nba.com/wp-content/uploads/headshots/nba/latest/260x190/201939.png"
   },
   {
     "name": "Klay Thompson",
-    "image": "http://placehold.it/128"
+    "image": "http://ak-static.cms.nba.com/wp-content/uploads/headshots/nba/latest/260x190/202691.png"
   },
   {
     "name": "Kevin Durant",
-    "image": "http://placehold.it/128"
+    "image": "https://ak-static.cms.nba.com/wp-content/uploads/headshots/nba/latest/260x190/201142.png"
   },
   {
     "name": "Draymond Green",
-    "image": "http://placehold.it/128"
+    "image": "http://ak-static.cms.nba.com/wp-content/uploads/headshots/nba/latest/260x190/203110.png"
   },
   {
     "name": "Andre Iguodala",
-    "image": "http://placehold.it/128"
+    "image": "http://ak-static.cms.nba.com/wp-content/uploads/headshots/nba/latest/260x190/2738.png"
   },
   {
     "name": "Briante Weber",
-    "image": "http://placehold.it/128"
+    "image": "http://ak-static.cms.nba.com/wp-content/uploads/headshots/nba/latest/260x190/1627362.png"
   },
   {
     "name": "Zaza Pachulia",
-    "image": "http://placehold.it/128"
+    "image": "http://ak-static.cms.nba.com/wp-content/uploads/headshots/nba/latest/260x190/2585.png"
   },
   {
     "name": "Shaun Livingston",
-    "image": "http://placehold.it/128"
+    "image": "http://ak-static.cms.nba.com/wp-content/uploads/headshots/nba/latest/260x190/2733.png"
   },
   {
     "name": "Javale McGee",
-    "image": "http://placehold.it/128"
+    "image": "http://ak-static.cms.nba.com/wp-content/uploads/headshots/nba/latest/260x190/201580.png"
   },
   {
     "name": "Ian Clark",
-    "image": "http://placehold.it/128"
+    "image": "https://ak-static.cms.nba.com/wp-content/uploads/headshots/nba/latest/260x190/203546.png"
   },
   {
     "name": "David West",
-    "image": "http://placehold.it/128"
+    "image": "http://ak-static.cms.nba.com/wp-content/uploads/headshots/nba/latest/260x190/2561.png"
+  },
+  {
+    "name": "James Michael McAdoo",
+    "image": "http://ak-static.cms.nba.com/wp-content/uploads/headshots/nba/latest/260x190/203949.png"
   }
 ]

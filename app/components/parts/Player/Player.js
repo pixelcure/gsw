@@ -14,10 +14,10 @@ export default class Player extends React.Component {
     }
 
     componentDidMount() {
-        let self = this;
         getPlayerStats(this.props.name)
-            .then(function(data) {
-                self.setState({playerData: data})
+            .then((data) => {
+                this.setState({playerData: data})
+                console.log(this.props.name, data);
             });
     }
 
@@ -54,7 +54,7 @@ export default class Player extends React.Component {
                 <article className='media'>
                     <div className='media-left'>
                         <figure>
-                            <img className='image is-128x128' src={this.props.image}/>
+                            <img className='image' src={this.props.image}/>
                             <figcaption>{this.props.name}</figcaption>
                         </figure>
                     </div>

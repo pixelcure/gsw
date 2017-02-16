@@ -147,10 +147,13 @@ exports.compressImages = function(paths) {
                     use: [
                         {
                         loader: 'image-webpack-loader',
-                        options: {
-                            optimizationLevel: 7,
-                            bypassOnDebug: true,
-                            interlaced: false
+                        query: {
+                                gifsicle: {
+                                    interlaced: false
+                                },
+                                optipng: {
+                                    optimizationLevel: 7
+                                }
                             }
                         },
                         {

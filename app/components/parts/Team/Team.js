@@ -122,10 +122,10 @@ export default class Team extends React.Component {
     render() {
         return (
             <section className='section teamDashboard'>
-                <h1 className='title'>League Rankings</h1>
-                {this.maybeDisplayTeamStats()}
                 <h1 className='title'>Team Rankings</h1>
                 {this.maybeDisplayTeamInfo()}
+                <h1 className='title'>League Rankings</h1>
+                {this.maybeDisplayTeamStats()}
             </section>
         );
     }

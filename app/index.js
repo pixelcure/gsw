@@ -39,6 +39,11 @@ class App extends React.Component {
                     {/* <Schedule/> */}
                     {this.showPlayers()}
                 </div>
+                <nav className='level'>
+                    <div className='level-item'>
+                        <p>Created with Bulma.io and Webpack</p>
+                    </div>
+                </nav>
             </div>
         );
     }

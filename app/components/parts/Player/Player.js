@@ -53,8 +53,8 @@ export default class Player extends React.Component {
             <div className='box player'>
                 <article className='media'>
                     <div className='media-left'>
-                        <figure>
-                            <img className='image' src={this.props.image}/>
+                        <figure className='image'>
+                            <img src={this.props.image}/>
                             <figcaption>{this.props.name}</figcaption>
                         </figure>
                     </div>

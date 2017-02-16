@@ -96,7 +96,7 @@ exports.loadCSS = function(paths) {
                 {
                     test: /\.scss$/,
                     include: paths,
-                    use: ['style-loader', 'css-loader', 'sass-loader']
+                    use: ['style-loader', 'css-loader', 'resolve-url-loader', 'sass-loader']
                 }
             ]
         }
@@ -142,7 +142,7 @@ exports.compressImages = function(paths) {
         module: {
             rules: [
                 {
-                    test: /\.png$/,
+                    test: /\.(png|jpg|jpeg|gif)$/,
                     include: paths,
                     use: [
                         {

@@ -29,7 +29,7 @@ class App extends React.Component {
     render() {
         return (
             <div>
-                <Hero title='Welcome to the Golden State Warriors home page!'/>
+                <Hero title='Golden State Warriors - Lock in'/>
                 {/* <ul>
                     <li>Game info</li>
                     <li>Schedule</li>

@@ -40,6 +40,7 @@
     "purecss": "^0.6.2",
     "purifycss-webpack": "^0.4.2",
     "purifycss-webpack-plugin": "^2.0.3",
+    "resolve-url-loader": "^2.0.0",
     "sass-loader": "^4.1.1",
     "style-loader": "^0.13.1",
     "stylelint-config-standard": "^16.0.0",

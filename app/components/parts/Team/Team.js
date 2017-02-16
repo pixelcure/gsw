@@ -16,6 +16,7 @@ export default class Team extends React.Component {
         getWarriorsTeamInfo()
             .then((data) => {
                 this.setState({data: data});
+                console.log(data);
             })
             .catch((error) => {
                 console.warn(error);
@@ -34,7 +35,6 @@ export default class Team extends React.Component {
     maybeDisplayTeamStats() {
         if (this.state.data !== null) {
             let ranks = this.state.data.teamSeasonRanks[0];
-            console.log(ranks);
             return (
                 <nav className='level'>
                     <div className='level-item has-text-centered'>
@@ -63,6 +63,42 @@ export default class Team extends React.Component {
                     </div>
                 </nav>
             );
+        } else {
+            <div className='is-loading'></div>
+        }
+    };
+
+    maybeDisplayTeamInfo() {
+        if (this.state.data !== null) {
+            let info = this.state.data.teamInfoCommon[0];
+            return (
+                <nav className='level'>
+                    <div className='level-item has-text-centered'>
+                        <div>
+                            <p className='heading'>Conference Rank</p>
+                            <p className='title'>{this.transformRankings(info.confRank)}</p>
+                        </div>
+                    </div>
+                    <div className='level-item has-text-centered'>
+                        <div>
+                            <p className='heading'>Division Rank</p>
+                            <p className='title'>{this.transformRankings(info.divRank)}</p>
+                        </div>
+                    </div>
+                    <div className='level-item has-text-centered'>
+                        <div>
+                            <p className='heading'>Wins</p>
+                            <p className='title'>{info.w}</p>
+                        </div>
+                    </div>
+                    <div className='level-item has-text-centered'>
+                        <div>
+                            <p className='heading'>Losses</p>
+                            <p className='title'>{info.l}</p>
+                        </div>
+                    </div>
+                </nav>
+            );
         }
     };
 
@@ -86,9 +122,10 @@ export default class Team extends React.Component {
     render() {
         return (
             <section className='section teamDashboard'>
-                <h1 className='title'>Current Rankings</h1>
-
+                <h1 className='title'>League Rankings</h1>
                 {this.maybeDisplayTeamStats()}
+                <h1 className='title'>Team Rankings</h1>
+                {this.maybeDisplayTeamInfo()}
             </section>
         );
     }

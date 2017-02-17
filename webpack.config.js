@@ -48,11 +48,10 @@ module.exports = function(env) {
             // ]),
             parts.generateSourcemaps('source-map'),
             parts.lintJavaScript({ paths: PATHS.app }),
-            parts.loadCSS(),
             parts.extractCSS(),
-            // parts.purifyCSS(
-            //     glob.sync(path.join(PATHS.app, '*'))
-            // ),
+            parts.purifyCSS(
+                glob.sync(path.join(PATHS.app, '*'))
+            ),
             parts.compressImages(PATHS.app)
         ]);
     }

@@ -106,16 +106,18 @@ exports.loadCSS = function(paths) {
 exports.extractCSS = function(paths) {
     return {
         plugins: [
-            new ExtractTextPlugin('bundle.css')
+            new ExtractTextPlugin({
+                filename: 'bundle.css'
+            })
         ],
         module: {
             rules: [
                 {
-                    test: /\.css$/,
+                    test: /\.scss$/,
                     include: paths,
                     use: ExtractTextPlugin.extract({
                         fallback: 'style-loader',
-                        use: 'css-loader'
+                        use: ['css-loader', 'resolve-url-loader', 'sass-loader']
                     })
                 }
             ]

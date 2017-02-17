@@ -40,18 +40,19 @@ module.exports = function(env) {
             //if you want to have code splitting (from vendor files)
             //Add a new entry point here - React is used as an example
             //
-            parts.extractBundles([
-                {
-                    name: 'vendor',
-                    entries: ['react']
-                }
-            ]),
+            // parts.extractBundles([
+            //     {
+            //         name: 'vendor',
+            //         entries: ['react']
+            //     }
+            // ]),
             parts.generateSourcemaps('source-map'),
             parts.lintJavaScript({ paths: PATHS.app }),
+            parts.loadCSS(),
             parts.extractCSS(),
-            parts.purifyCSS(
-                glob.sync(path.join(PATHS.app, '*'))
-            ),
+            // parts.purifyCSS(
+            //     glob.sync(path.join(PATHS.app, '*'))
+            // ),
             parts.compressImages(PATHS.app)
         ]);
     }

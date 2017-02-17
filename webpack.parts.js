@@ -105,21 +105,21 @@ exports.loadCSS = function(paths) {
 
 exports.extractCSS = function(paths) {
     return {
+        plugins: [
+            new ExtractTextPlugin('bundle.css')
+        ],
         module: {
             rules: [
                 {
                     test: /\.css$/,
                     include: paths,
-                    loader: ExtractTextPlugin.extract({
+                    use: ExtractTextPlugin.extract({
                         fallback: 'style-loader',
                         use: 'css-loader'
                     })
                 }
             ]
-        },
-        plugins: [
-            new ExtractTextPlugin('bundle.css')
-        ]
+        }
     }
 };
 

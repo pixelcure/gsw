@@ -30,8 +30,8 @@ export default class Table extends React.Component {
 
     render() {
         return(
-            <div className='table-container'>
-                <table className='table is-striped'>
+            <div className='container'>
+                <table className='table is-striped is-hidden-mobile'>
                     <thead>
                         <tr>
                             {this.createTableHeader()}

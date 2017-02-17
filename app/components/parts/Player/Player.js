@@ -48,18 +48,30 @@ export default class Player extends React.Component {
         }
     }
 
+    renderPlayerImage() {
+        return (
+            <div>
+                <figure className='image is-hidden-touch'>
+                    <img src={this.props.image}/>
+                    <figcaption>{this.props.name}</figcaption>
+                </figure>
+                <figure className='image is-128x128 is-hidden-desktop'>
+                    <img src={this.props.image}/>
+                    <figcaption>{this.props.name}</figcaption>
+                </figure>
+            </div>
+        )
+    }
+
     render() {
         return (
             <div className='box player'>
                 <article className='media'>
                     <div className='media-left'>
-                        <figure className='image'>
-                            <img src={this.props.image}/>
-                            <figcaption>{this.props.name}</figcaption>
-                        </figure>
+                        {this.renderPlayerImage()}
                     </div>
                     <div className='media-content'>
-                        <div className='tabs'>
+                        <div className='tabs is-hidden-mobile'>
                             <ul>
                                 <li className={(this.state.activeTab === 0) ? 'is-active': null}><a href='#' onClick={(e) => this.switchTab(e, 0)}>Previous Game</a></li>
                                 <li className={(this.state.activeTab === 1) ? 'is-active': null}><a href='#' onClick={(e) => this.switchTab(e, 1)}>Season</a></li>

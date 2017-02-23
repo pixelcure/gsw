@@ -46,7 +46,7 @@ module.exports = function(env) {
             //         entries: ['react']
             //     }
             // ]),
-            parts.generateSourcemaps('source-map'),
+            // parts.generateSourcemaps('source-map'),
             parts.lintJavaScript({ paths: PATHS.app }),
             parts.extractCSS(),
             parts.purifyCSS(

@@ -4924,6 +4924,14 @@ rc@^1.0.1, rc@^1.1.2, rc@~1.1.6:
     minimist "^1.2.0"
     strip-json-comments "~1.0.4"
 
+react-cauldron@^1.0.2:
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/react-cauldron/-/react-cauldron-1.0.2.tgz#789b6f366de2816ba691f777786cc5632eb21bcc"
+  dependencies:
+    bulma "^0.3.1"
+    react "^15.4.2"
+    react-dom "^15.4.2"
+
 react-dom@^15.4.2:
   version "15.4.2"
   resolved "https://registry.yarnpkg.com/react-dom/-/react-dom-15.4.2.tgz#015363f05b0a1fd52ae9efdd3a0060d90695208f"
